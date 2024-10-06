@@ -2,7 +2,7 @@
 
 **1. Clone the Project using git clone command**
 
-**2. Create Database name Ecart in MS SQL Server Server Name = . **
+**2. Create Database name Ecart in MS SQL Server, Server Name ="."**
 **3. Run this create command on Ecart Database to create Product Table 
 
 CREATE TABLE Product (
