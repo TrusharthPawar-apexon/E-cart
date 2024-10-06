@@ -1,0 +1,39 @@
+﻿@model Product
+
+<div class="container-sm">
+    <div class="row justify-content-md-center">
+        <div class="col col-6">
+            <h2 class="text-center">Edit Product</h2>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col col-5">
+            <form method="post" action=@Url.Action("Edit","Product") id="myForm" onsubmit="return handleSubmit()">
+                <div class="mb-3">
+                    <label for="ProductNumber" class="form-label">ProductNumber</label>
+                    <input asp-for="ProductNumber" type="text" class="form-control" id="ProductNumber" placeholder="Enter Product Number" value=@Model.ProductNumber />
+                    <span asp-validation-for="ProductNumber" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="Description" class="form-label">Description</label>
+                    <input asp-for="Description" type="text" class="form-control" id="Description" placeholder="Enter Product Description" value=@Model.Description />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="Price" class="form-label">Price</label>
+                    <input name="Price" type="text" class="form-control" id="Price" placeholder="Enter Product Price" value=@Model.Price />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-success">Update</button>
+
+                @if (ViewBag.Message == "Update")
+                {
+                    <div class="mb-3 alert alert-success" role="alert">
+                        Product Updated Successfully.
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+</div>
+
