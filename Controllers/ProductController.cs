@@ -27,6 +27,7 @@ namespace Ecart.Controllers
             return View();
         }
 
+        // Action to Create Product in database.
         [HttpPost]
         public IActionResult Create(Product product)
         {
@@ -44,11 +45,12 @@ namespace Ecart.Controllers
             Product product = productRepository.GetProduct(Id);
             if(product == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
             return View(product);
         }
 
+        // Action to update product details.
         [HttpPost]
         public IActionResult Edit(Product product) 
         {
@@ -62,11 +64,12 @@ namespace Ecart.Controllers
             var product = productRepository.GetProduct(Id);
             if(product == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
             return View(product);
         }
 
+        // Action to delete product from database
         [HttpPost]
         [ActionName("Delete")]
         public IActionResult DeletePost(Guid Id)

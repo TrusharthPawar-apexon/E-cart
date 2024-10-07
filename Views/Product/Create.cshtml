@@ -22,7 +22,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="Price" class="form-label">Price</label>
-                    <input name="Price" type="text" class="form-control" id="Price" placeholder="Enter Product Price"/>
+                    <input asp-for="Price" type="number" class="form-control" id="Price" placeholder="Enter Product Price"/>
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
                 <button type="submit" class="btn btn-success">Create</button>
