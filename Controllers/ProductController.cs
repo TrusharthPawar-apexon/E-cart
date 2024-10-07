@@ -54,9 +54,13 @@ namespace Ecart.Controllers
         [HttpPost]
         public IActionResult Edit(Product product) 
         {
-            productRepository.UpdateProduct(product);
-            ViewBag.Message = "Updated";
-            return View("Success");
+            if (ModelState.IsValid)
+            {
+                productRepository.UpdateProduct(product);
+                ViewBag.Message = "Updated";
+                return View("Success");
+            }
+            return View(product);
         }
 
         public IActionResult Delete(Guid Id)
